@@ -16,10 +16,9 @@ public class Pendule {
             lettresDevinees[lettresDevinees.length - 1] = motADeviner.charAt(motADeviner.length() - 1);
         }
 
-        int essaisRestants = 6;
+        int essaisRestants = 4;
         Scanner scanner = new Scanner(System.in);
 
-        // Boucle principale du jeu
         while (essaisRestants > 0 && !motEstDevine(lettresDevinees)) {
             afficherEtat(lettresDevinees, essaisRestants);
             System.out.println("Entrez une lettre :");
@@ -30,8 +29,6 @@ public class Pendule {
                 System.out.println("Mauvaise lettre ! Essais restants : " + essaisRestants);
             }
         }
-
-        // Fin du jeu
         if (motEstDevine(lettresDevinees)) {
             System.out.println("Félicitations ! Vous avez deviné le mot : " + motADeviner);
         } else {
